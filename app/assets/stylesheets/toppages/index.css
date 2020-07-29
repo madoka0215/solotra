@@ -1,0 +1,85 @@
+.top-wrapper img {
+  width: 100vw;
+  margin-bottom: 2vh;
+}
+
+.main-wrapper {
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.heading {
+  color: gray;
+  font-size: 2.5vw;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.origin-search-field {
+  height: 15vh;
+  width: 90vw;
+  margin-left: 5vw;
+  background-color: #EEEEEE;
+}
+
+.btn {
+  color: white;
+  font-size: 2vw;
+  height: 8vh;
+  margin-top: 3.5vh;
+  line-height: 6.5vh;
+}
+
+.origin-search-field .btn {
+  width: 20vw;
+}
+
+.conditional-search-field {
+  height: 40vh;
+  width: 90vw;
+  margin-left: 5vw;
+  padding-top: 3vh;
+  background-color: #EEEEEE;
+}
+
+.conditional {
+  display: flex;
+  justify-content: space-around;
+}
+
+.field-left p {
+  font-size: 2vh;
+  padding-top: 10px;
+  text-align: left;
+}
+
+select {
+  font-size: 1vh;
+  height: 30px;
+  width: 25vw;
+}
+
+.field-right p {
+  font-size: 2vh;
+  padding-top: 10px;
+  text-align: left;
+}
+
+input {
+  font-size: 1vh;
+  height: 30px;
+  width: 53vw;
+}
+
+.input-left {
+  margin-right: 5px;
+}
+
+.input-right {
+  margin-left: 5px;
+}
+
+.search-btn .btn {
+  width: 80vw;
+}
