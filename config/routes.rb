@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   root to: 'toppages#index'
 
   resources :users
+
+  resources :tourlists, only: [:index]
+  resources :tours, only: [:index, :show]
 end
