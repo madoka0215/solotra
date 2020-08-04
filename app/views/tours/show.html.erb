@@ -1,0 +1,137 @@
+<div class="top-wrapper">
+  <h1 class="tour-name"><%= @tour.tour_name %></h1>
+  <%= image_tag @tour.image.to_s , class: 'tour-image' %>
+
+  <div class="overview">
+    <div class="tour-price-area">
+      <p class="tour-price">ツアー料金</p>
+      <p class="price-range"><%= @tour.base_price.to_s(:delimited) %> 〜 <%= (@tour.base_price + @tour.airplane_d_price + @tour.hotel_d_price).to_s(:delimited)  %>円</p>
+    </div>
+
+    <table class="table table-bordered table-top">
+      <tbody>
+        <tr>
+          <th scope="row">出発地</th>
+          <td><%= @tour.departure %></td>
+        </tr>
+        <tr>
+          <th scope="row">日数</th>
+          <td><%= @tour.number_of_night %>泊<%= @tour.length_of_stay %>日</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <ul class="nav nav-tabs mt-5 tab">
+      <li class="nav-item"><a href="#tab1" class="nav-link active" data-toggle="tab">旅行代金</a></li>
+      <li class="nav-item"><a href="#tab2" class="nav-link" data-toggle="tab">おすすめポイント</a></li>
+      <li class="nav-item"><a href="#tab3" class="nav-link" data-toggle="tab">旅行日程表</a></li>
+      <li class="nav-item"><a href="#tab4" class="nav-link" data-toggle="tab">注意事項</a></li>
+    </ul>
+
+    <div class="tab-content detail">
+      <div class="tab-pane active" id="tab1">
+        <div class="grade airplane-grade">
+          <p>基本料金<%= @tour.base_price.to_s(:delimited) %></p>
+          <table class="table table-bordered table-airplane">
+            <thead>
+              <tr>
+                <th scope="col">飛行機グレード</th>
+                <th scope="col">追加料金 (一往復あたり)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>A : LCC (預け荷物なし)</th>
+                <td>+0円</td>
+              </tr>
+              <tr>
+                <td>B : LCC (預け荷物あり)</th>
+                <td>+<%= @tour.airplane_b_price.to_s(:delimited) %>円</td>
+              </tr>
+              <tr>
+                <td>C : エコノミー (預け荷物あり)</th>
+                <td>+<%= @tour.airplane_c_price.to_s(:delimited) %>円</td>
+              </tr>
+              <tr>
+                <td>D : ビジネス (預け荷物あり)</th>
+                <td>+<%= @tour.airplane_d_price.to_s(:delimited) %>円</td>
+              </tr>
+            </tbody>  
+          </table>
+        </div>
+
+        <div class="grale hotel-grade">
+          <table class="table table-bordered table-hotel">
+            <thead>
+              <tr>
+                <th scope="col">ホテルグレード</th>
+                <th scope="col">追加料金（一泊あたり）</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>A : ホステル</th>
+                <td>+0円</td>
+              </tr>
+              <tr>
+                <td>B : ホテル (★ 〜 ★★)</th>
+                <td>+<%= @tour.hotel_b_price.to_s(:delimited) %>円</td>
+              </tr>
+              <tr>
+                <td>C : ホテル (★★★ 〜 ★★★★)</th>
+                <td>+<%= @tour.hotel_c_price.to_s(:delimited) %>円</td>
+              </tr>
+              <tr>
+                <td>D : ホテル (★★★★★)</th>
+                <td>+<%= @tour.hotel_d_price.to_s(:delimited) %>円</td>
+              </tr>
+            </tbody>  
+          </table>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="tab2">
+        <%= @tour.recommend_point %>
+      </div>
+
+      <div class="tab-pane" id="tab3">
+        <%= @tour.schedule %>
+        <table class="table table-bordered table-schedule">
+          <thead>
+            <tr>
+              <th scope="col">日</th>
+              <th scope="col">地名</th>
+              <th scope="col">時</th>
+              <th scope="col">予定</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="days">1</td>
+              <td>東京発<br><br>○○着</td>
+              <td>00:00<br><br>00:00</td>
+              <td>空路で○○へ</td>
+            </tr>
+            <tr>
+              <td class="days">2<br>~<br>4</th>
+              <td>○○</td>
+              <td>終日</td>
+              <td>自由行動<br></td>
+            </tr>
+            <tr>
+              <td class="days">5</th>
+              <td>○○発<br><br>東京着</td>
+              <td>00:00<br><br>00:00</td>
+              <td>空路で東京へ<br><br>到着後、解散</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tab-pane" id="tab4">
+        <p>注意事項</p>
+      </div>
+    </div>
+  </div>
+</div>
