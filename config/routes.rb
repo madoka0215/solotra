@@ -9,6 +9,9 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :tourlists, only: [:index]
-  resources :tours, only: [:index, :show]
+  resources :tours
+
+  # namespace :admin do
+  #   resources :tour_posts
+  # end
 end

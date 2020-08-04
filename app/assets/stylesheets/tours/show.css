@@ -1,0 +1,20 @@
+.container {
+  margin: 0px;
+}
+
+.area {
+  height: 300px;
+  width: 90vw;
+  background-color: #EEEEEE;
+  margin: 30px 20px;
+  padding: 20px;
+}
+
+.area p {
+  padding-bottom: 10px;
+  border-bottom: 1px solid gray;
+}
+
+.nav-link {
+  color: gray;
+}

@@ -1,136 +1,189 @@
-<div class="top-wrapper">
-  <h1 class="tour-name">ツアーの商品名</h1>
-  <img src="assets/eiffel-tower.jpg" alt="イメージ写真">
-
-  <div class="overview">
-    <div class="tour-price-area">
-      <p class="tour-price">旅行代金</p>
-      <p class="price-range">60,000円 〜 200,000円</p>
+<div class="container">
+  <ul class="nav nav-tabs mt-5">
+    <li class="nav-item"><a href="#tokyo" class="nav-link active" data-toggle="tab">東京発</a></li>
+    <li class="nav-item"><a href="#nagoya" class="nav-link" data-toggle="tab">名古屋発</a></li>
+    <li class="nav-item"><a href="#osaka" class="nav-link" data-toggle="tab">大阪発</a></li>
+    <li class="nav-item"><a href="#fukuoka" class="nav-link" data-toggle="tab">福岡発</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="tokyo">
+      <div class="area">
+        <p>中国・香港</p>
+        <%= render 'tours/tours', tours: @tours %>
+      </div>
+      <div class="area">
+        <p>台湾</p>
+      </div>
+      <div class="area">
+        <p>韓国</p>
+      </div>
+      <div class="area">
+        <p>タイ</p>
+      </div>
+      <div class="area">
+        <p>ベトナム</p>
+      </div>
+      <div class="area">
+        <p>シンガポール</p>
+      </div>
+      <div class="area">
+        <p>マレーシア</p>
+      </div>
+      <div class="area">
+        <p>フィリピン</p>
+      </div>
     </div>
 
-    <table class="table table-bordered table-top">
-      <tbody>
-        <tr>
-          <th scope="row">出発地</th>
-          <td>　東京</td>
-        </tr>
-        <tr>
-          <th scope="row">日数</th>
-          <td>　4泊5日</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-    <ul class="nav nav-tabs mt-5 tab">
-      <li class="nav-item"><a href="#tab1" class="nav-link active" data-toggle="tab">旅行代金</a></li>
-      <li class="nav-item"><a href="#tab2" class="nav-link" data-toggle="tab">おすすめポイント</a></li>
-      <li class="nav-item"><a href="#tab3" class="nav-link" data-toggle="tab">旅行日程表</a></li>
-      <li class="nav-item"><a href="#tab4" class="nav-link" data-toggle="tab">注意事項</a></li>
-    </ul>
-
-    <div class="tab-content detail">
-      <div class="tab-pane active" id="tab1">
-        <div class="grade airplane-grade">
-          <p>基本料金　60,000円</p>
-          <table class="table table-bordered table-airplane">
-            <thead>
-              <tr>
-                <th scope="col">飛行機グレード</th>
-                <th scope="col">追加料金 (一往復あたり)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>　A : LCC (預け荷物なし)</th>
-                <td>　+0円</td>
-              </tr>
-              <tr>
-                <td>　B : LCC (預け荷物あり)</th>
-                <td>　+5,000円</td>
-              </tr>
-              <tr>
-                <td>　C : エコノミー (預け荷物あり)</th>
-                <td>　+20,000円</td>
-              </tr>
-              <tr>
-                <td>　D : ビジネス (預け荷物あり)</th>
-                <td>　+100,000円</td>
-              </tr>
-            </tbody>  
-          </table>
-        </div>
-
-        <div class="grale hotel-grade">
-          <table class="table table-bordered table-hotel">
-            <thead>
-              <tr>
-                <th scope="col">ホテルグレード</th>
-                <th scope="col">追加料金（一泊あたり）</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>　A : ホステル</th>
-                <td>　+0円</td>
-              </tr>
-              <tr>
-                <td>　B : ホテル (★ 〜 ★★)</th>
-                <td>　+2,500円</td>
-              </tr>
-              <tr>
-                <td>　C : ホテル (★★★ 〜 ★★★★)</th>
-                <td>　+5,000円</td>
-              </tr>
-              <tr>
-                <td>　D : ホテル (★★★★★)</th>
-                <td>　+10,000円</td>
-              </tr>
-            </tbody>  
-          </table>
-        </div>
+    <div class="tab-pane" id="nagoya">
+      <div class="area">
+        <p>中国・香港</p>
       </div>
-
-      <div class="tab-pane" id="tab2">
-        <p>おすすめポイント</p>
+      <div class="area">
+        <p>台湾</p>
       </div>
-
-      <div class="tab-pane" id="tab3">
-        <table class="table table-bordered table-schedule">
-          <thead>
-            <tr>
-              <th scope="col">日</th>
-              <th scope="col">地名</th>
-              <th scope="col">時</th>
-              <th scope="col">予定</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="days">1</td>
-              <td>東京発<br><br>○○着</td>
-              <td>00:00<br><br>00:00</td>
-              <td>空路で○○へ</td>
-            </tr>
-            <tr>
-              <td class="days">2<br>~<br>4</th>
-              <td>○○</td>
-              <td>終日</td>
-              <td>自由行動<br></td>
-            </tr>
-            <tr>
-              <td class="days">5</th>
-              <td>○○発<br><br>東京着</td>
-              <td>00:00<br><br>00:00</td>
-              <td>空路で東京へ<br><br>到着後、解散</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="area">
+        <p>韓国</p>
       </div>
+      <div class="area">
+        <p>タイ</p>
+      </div>
+      <div class="area">
+        <p>ベトナム</p>
+      </div>
+      <div class="area">
+        <p>シンガポール</p>
+      </div>
+      <div class="area">
+        <p>マレーシア</p>
+      </div>
+      <div class="area">
+        <p>フィリピン</p>
+      </div>
+    </div>
 
-      <div class="tab-pane" id="tab4">
-        <p>注意事項</p>
+    <div class="tab-pane" id="osaka">
+      <div class="area">
+        <p>中国・香港</p>
+      </div>
+      <div class="area">
+        <p>台湾</p>
+      </div>
+      <div class="area">
+        <p>韓国</p>
+      </div>
+      <div class="area">
+        <p>タイ</p>
+      </div>
+      <div class="area">
+        <p>ベトナム</p>
+      </div>
+      <div class="area">
+        <p>シンガポール</p>
+      </div>
+      <div class="area">
+        <p>マレーシア</p>
+      </div>
+      <div class="area">
+        <p>フィリピン</p>
+      </div>
+    </div>
+
+    <div class="tab-pane" id="fukuoka">
+      <div class="area">
+        <p>中国・香港</p>
+      </div>
+      <div class="area">
+        <p>台湾</p>
+      </div>
+      <div class="area">
+        <p>韓国</p>
+      </div>
+      <div class="area">
+        <p>タイ</p>
+      </div>
+      <div class="area">
+        <p>ベトナム</p>
+      </div>
+      <div class="area">
+        <p>シンガポール</p>
+      </div>
+      <div class="area">
+        <p>マレーシア</p>
+      </div>
+      <div class="area">
+        <p>フィリピン</p>
       </div>
     </div>
   </div>
+</div>
+
+<div class="admin-area">
+  <% if current_user.admin? %>
+
+    <%= form_with(model: @tour, local: true) do |f| %>
+      <div class="form-group">
+        <%= f.label :tour_name, "ツアー名" %>
+        <%= f.text_field :tour_name %>
+      </div>
+      <div class="form-group">
+        <%= f.label :image, "イメージ画像" %>
+        <%= f.file_field :image %>
+      </div>
+      <div class="form-group">
+        <%= f.label :number_of_night, "宿泊日数" %>
+        <%= f.select :number_of_night, {'1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6}, { include_blank: '選択してください'} %>
+      </div>
+      <div class="form-group">
+        <%= f.label :length_of_stay, "滞在日数" %>
+        <%= f.select :length_of_stay, {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7}, { include_blank: '選択してください'} %>
+      </div>
+      <div class="form-group">
+        <%= f.label :departure, "出発地" %>
+        <%= f.select :departure, {'東京': '東京', '名古屋': '名古屋', '大阪': '大阪', '福岡': '福岡'}, { include_blank: '選択してください'} %>
+      </div>
+      <div class="form-group">
+        <%= f.label :arrival, "目的地" %>
+        <%= f.select :arrival, {'中国': '中国', '台湾': '台湾', '韓国': '韓国', 'タイ': 'タイ', 'ベトナム': 'ベトナム', 'シンガポール': 'シンガポール', 'マレーシア': 'マレーシア', 'フィリピン': 'フィリピン'}, { include_blank: '選択してください'} %>
+      </div>
+      <div class="form-group">
+        <%= f.label :base_price, "基本料金" %>
+        <%= f.text_field :base_price %>
+      </div>
+      <div class="form-group">
+        <%= f.label :airplane_b_price, "飛行機追加料金(B)" %>
+        <%= f.text_field :airplane_b_price %>
+      </div>
+      <div class="form-group">
+        <%= f.label :airplane_c_price, "飛行機追加料金(C)" %>
+        <%= f.text_field :airplane_c_price %>
+      </div>
+      <div class="form-group">
+        <%= f.label :airplane_d_price, "飛行機追加料金(D)" %>
+        <%= f.text_field :airplane_d_price %>
+      </div>
+      <div class="form-group">
+        <%= f.label :hotel_b_price, "ホテル追加料金(B)" %>
+        <%= f.text_field :hotel_b_price %>
+      </div>
+      <div class="form-group">
+        <%= f.label :hotel_c_price, "ホテル追加料金(C)" %>
+        <%= f.text_field :hotel_c_price %>
+      </div>
+      <div class="form-group">
+        <%= f.label :hotel_d_price, "ホテル追加料金(D)" %>
+        <%= f.text_field :hotel_d_price %>
+      </div>
+      <div class="form-group">
+        <%= f.label :recommend_point, "おすすめポイント" %>
+        <%= f.text_area :recommend_point %>
+      </div>
+      <div class="form-group">
+        <%= f.label :schedule, "スケジュール" %>
+        <%= f.text_area :schedule %>
+      </div>
+
+      <%= f.submit '投稿', class: 'btn btn-warning btn-block' %>
+
+    <% end %>
+  <% end %>
 </div>

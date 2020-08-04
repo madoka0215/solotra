@@ -6,63 +6,13 @@
   <div class="origin-search">
     <h1 class="heading">出発地から探す</h1>
     <div class="origin-search-field">
-      <a href="#" class="btn btn-warning">東京発</a>
-      <a href="#" class="btn btn-warning">名古屋発</a>
-      <a href="#" class="btn btn-warning">大阪発</a>
-      <a href="#" class="btn btn-warning">福岡発</a>
+      <a href="/tours" class="btn btn-warning">東京発</a>
+      <a href="/tours" class="btn btn-warning">名古屋発</a>
+      <a href="/tours" class="btn btn-warning">大阪発</a>
+      <a href="/tours" class="btn btn-warning">福岡発</a>
     </div>
   </div>
-  <div class="conditional-search">
-    <h1 class="heading">条件から探す</h1>
-    <div class="conditional-search-field">
-      <div class="conditional">
-        <div class="field-left">
-          <p>出発地</p>
-          <select>
-            <option disabled selected value>出発地をお選びください</option>
-            <option value="tokyo">東京</option>
-            <option value="nagoya">名古屋</option>
-            <option value="osaka">大阪</option>
-            <option value="fukuoka">福岡</option>
-          </select>
-          <p>目的地</p>
-          <select>
-            <option disabled selected value>目的地をお選びください</option>
-            <option value="1">中国・香港</option>
-            <option value="2">台湾</option>
-            <option value="3">韓国</option>
-            <option value="4">タイ</option>
-            <option value="5">ベトナム</option>
-            <option value="6">シンガポール</option>
-            <option value="7">マレーシア</option>
-            <option value="8">フィリピン</option>
-          </select>
-        </div>
-        <div class="field-right">
-          <p>出発日</p>
-          <input class="input-left" type="date" min="2020-10-01" max="2021-01-31">
-          <p>旅行日数</p>
-          <select>
-            <option disabled selected value>指定なし</option>
-            <option value="2">2日間</option>
-            <option value="3">3日間</option>
-            <option value="4">4日間</option>
-            <option value="5">5日間</option>
-            <option value="6">6日間</option>
-          </select>
-          〜
-          <select>
-            <option disabled selected value>指定なし</option>
-            <option value="3">3日間</option>
-            <option value="4">4日間</option>
-            <option value="5">5日間</option>
-            <option value="6">6日間</option>
-            <option value="7">7日間</option>
-          </select>
-        </div>
-      </div>
-    <div class="search-btn">
-      <button type="submit" class="btn btn-warning">この条件で検索</button>
-    </div>
-  </div>
+
+  <%= render 'tours/search' %>
+
 </div>
