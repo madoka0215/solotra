@@ -1,0 +1,104 @@
+.request-area {
+  width: 100vw;
+}
+
+.request-area h1 {
+  font-size: 24px;
+  margin: 30px;
+}
+
+.attention {
+  border: solid 1px red;
+  text-align: center;
+  margin: 30px 80px;
+  padding: 10px;
+}
+
+.attention h2 {
+  font-size: 18px;
+  color: red;
+  margin: 10px;
+}
+
+.attention p {
+  font-size: 12px;
+  margin: 0;
+}
+
+.request-form {
+  background-color : #eeeeee;
+  margin: 50px;
+  padding: 50px;
+}
+
+.request-form h2 {
+  font-size: 18px;
+  margin: 20px 0 30px;
+  font-weight: bold;
+}
+
+.request {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.request input[type="date"] {
+  font-size: 10px;
+}
+
+.request input[type="date"],
+.request input[type="text"],
+.request select,
+.request textarea,
+.request .form-right{
+  width: 50%;
+}
+
+.user-name {
+  margin-top: 60px;
+}
+
+.attention-message {
+  color: red;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+@media (min-width: 1000px) {
+  .attention {
+    margin: 30px 300px;
+  }
+  
+  .request-form {
+    margin: 30px 270px;
+  }
+}
+
+@media (max-width: 500px) {
+  .form-left,
+  .form-right {
+    font-size: 12px;
+  }
+  
+  .attention {
+    margin: 50px;
+  }
+  
+  .request-form {
+    padding: 30px;
+    margin: 30px;
+  }
+}
+
+@media (max-width: 400px) {
+  .form-left,
+  .form-right {
+    font-size: 10px;
+  }
+  .request-form {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,15 @@
+<ul class="list-unstyled">
+
+<% @tours.each do |tour| %>
+  <li>
+    <div class="mr-3">
+      <%= link_to tour.tour_name,tour_path(tour.id) %>
+    </div>
+    <div>
+      <%= tour.departure %>発・<%= tour.city %>行 / 
+      <%= tour.number_of_night %>泊<%= tour.length_of_stay %>日 / 
+      <%= tour.base_price.to_s(:delimited) %>円 〜 <%= (tour.base_price + tour.airplane_d_price + tour.hotel_d_price).to_s(:delimited)  %>円
+    </div>
+  </li>
+<% end %>
+</ul>

@@ -1,0 +1,100 @@
+<div class="container">
+  <div class="request-area">
+    <h1>ツアー予約リクエスト</h1>
+    <div class="attention">
+      <h2>※本フォームではご予約は完了しません</h2>
+      <p>空席状況を確認の上、正式予約がお受けできるかを、メールにてご連絡いたします。<br>
+        その後、メールに記載された期日までに、申込を完了させてください。<br>
+        ※指定の期日までに申込が完了されていない場合は、キャンセルとなります。
+      </p>
+    </div>
+    
+    <div class="request-form">
+      <%= form_with(model: @booking, url: tour_bookings_path(@tour), local: true) do |f| %>
+        <%= render 'layouts/error_messages', model: f.object %>
+        <%= f.hidden_field :tour_id %>
+      
+        <h2><%= @tour.tour_name %></h2>
+        <div class="request">
+          <div class="form-left">
+            出発地
+          </div>
+          <div class="form-right">
+            <%= @tour.departure %>
+          </div>
+        </div>
+        <div class="request">
+          <div class="form-left">
+            目的地
+          </div>
+          <div class="form-right">
+            <%= @tour.arrival %>・<%= @tour.city if @tour.city.present? %>
+          </div>
+        </div>
+        <div class="form-group request">
+          <div class="form-left">
+            <%= f.label :departure_date, "出発日" %>
+          </div>
+            <%= f.date_field :departure_date %>
+        </div>
+        <div class="request">
+          <div class="form-left">
+            旅行期間
+          </div>
+          <div class="form-right">
+            <%= @tour.number_of_night %>泊<%= @tour.length_of_stay %>日
+          </div>
+        </div>
+        <div class="request">
+          <div class="form-left">
+            基本料金
+          </div>
+          <div class="form-right">
+            <%= @tour.base_price.to_s(:delimited) %>円
+          </div>
+        </div>
+        <div class="form-group request">
+          <div class="form-left">
+            <%= f.label :airplane_grade, "飛行機グレード" %>
+          </div>
+            <%= f.select :airplane_grade, {'A : LCC (預け荷物なし)': 0, 'B : LCC (預け荷物あり)': @tour.airplane_b_price, 'C : エコノミー (預け荷物あり)': @tour.airplane_c_price, 'D : ビジネス (預け荷物あり)': @tour.airplane_c_price}, { include_blank: '選択してください'} %>
+        </div>
+        <div class="form-group request">
+          <div class="form-left">
+            <%= f.label :hotel_grade, "ホテルグレード" %>
+          </div>
+            <%= f.select :hotel_grade, {'A : ホステル': 0, 'B : ホテル (★ 〜 ★★)': @tour.hotel_b_price, 'C : ホテル (★★★ 〜 ★★★★)': @tour.hotel_c_price, 'D : ホテル (★★★★★)': @tour.hotel_d_price}, { include_blank: '選択してください'} %>
+        </div>
+        
+        <div class="request">
+          <div class="form-left user-name">
+            申込者名
+          </div>
+          <div class="form-right user-name">
+            <%= @user.name %>
+          </div>
+        </div>
+        <div class="request">
+          <div class="form-left">
+            メールアドレス
+          </div>
+          <div class="form-right">
+            <%= @user.email %>
+          </div>
+        </div>
+        <div class="form-group request">
+          <div class="form-left">
+            <%= f.label :remarks_column, "備考欄" %>
+          </div>
+            <%= f.text_area :remarks_column %>
+        </div>
+        
+        <div class="attention-message">
+          内容にお間違いがないか、再度ご確認の上、送信ボタンを押してください。
+        </div>
+         
+        <%= f.submit "リクエストを送信する", class: "btn btn-warning btn-block" %>
+      <% end %>
+    </div>
+  </div>
+</div>

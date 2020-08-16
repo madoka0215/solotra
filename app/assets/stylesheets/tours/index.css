@@ -1,0 +1,30 @@
+.container {
+  margin: 0;
+  padding-left: 0;
+}
+
+.area-all {
+  width: 100vw;
+}
+
+.area {
+  background-color: #eeeeee;
+  margin: 30px;
+  padding: 20px;
+}
+
+.area p {
+  padding-bottom: 10px;
+  border-bottom: 1px solid gray;
+}
+
+.nav-link {
+  color: gray;
+}
+
+@media (min-width: 1000px) {
+  .area,
+  .tabs {
+    margin: 30px 300px;
+  }
+}

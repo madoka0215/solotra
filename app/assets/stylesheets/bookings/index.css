@@ -1,0 +1,28 @@
+.bookings {
+  width: 100vw;
+}
+
+.booking {
+  margin: 50px;
+}
+
+.booking h1 {
+  font-size: 24px;
+}
+
+.table-booking {
+  font-size: 12px;
+  margin: 30px 0 100px;
+}
+
+@media (min-width: 1000px) {
+  .booking {
+    margin: 50px 300px;
+  }
+}
+
+@media (max-width: 500px) {
+  .table-booking {
+    font-size: 10px;
+  }
+}

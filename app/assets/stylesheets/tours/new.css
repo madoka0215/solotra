@@ -1,0 +1,52 @@
+.tab-all {
+  width: 100vw;
+}
+
+.admin {
+  width: 100vw;
+}
+
+.admin-area {
+  background-color : #eeeeee;
+  margin: 30px;
+  padding: 40px;
+}
+
+.admin-area .form-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.admin-area input[type="file"] {
+  font-size: 12px;
+}
+
+.admin-area input[type="file"],
+.admin-area input[type="text"],
+.admin-area textarea,
+.admin-area select {
+  width: 50%;
+}
+
+.admin-area textarea {
+  font-size: 12px;
+}
+
+@media (min-width: 1000px) {
+  .admin-area {
+    margin: 30px 300px;
+  }
+}
+
+@media (max-width: 500px) {
+  .form-left {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .form-left {
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,16 @@
+.search-results {
+  width: 90vw;
+  background-color: #eeeeee;
+  margin: 30px 20px;
+  padding: 20px;
+}
+
+.search-results p {
+  padding-bottom: 10px;
+  border-bottom: 1px solid gray;
+}
+
+.btn-light {
+  font-size: 10px;
+  margin: 0 0 50px 20px;
+}

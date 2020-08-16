@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    attributes:
+      booking:
+        departure_date: 出発日
+        airplane_grade: 飛行機グレード
+        hotel_grade: ホテルグレード
+        

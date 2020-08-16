@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="bookings">
+    <div class="booking">
+      <h1>予約リクエスト一覧</h1>
+      <table class="table table-bordered table-booking">
+        <tr>
+          <th class="text-center">予約No.</th>
+          <th class="text-center">ユーザー名</th>
+          <th class="text-center">出発地</th>
+          <th class="text-center">目的地</th>
+          <th class="text-center">出発日</th>
+          <th class="text-center">旅行期間</th>
+          <th class="text-center">ステータス</th>
+        </tr>  
+        <% @bookings.each do |booking| %>
+          <tr>
+            <td class="text-center"><%= link_to booking.id,booking_path(booking.id) %></td>
+            <td class="text-center"><%= booking.user.name %></td>
+            <td class="text-center"><%= booking.tour.departure %></td>
+            <td class="text-center"><%= booking.tour.city %></td>
+            <td class="text-center"><%= booking.departure_date %></td>
+            <td class="text-center"><%= booking.tour.number_of_night %>泊<%= booking.tour.length_of_stay %>日</td>
+            <td class="text-center"><%= booking.status %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

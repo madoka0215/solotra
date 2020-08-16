@@ -5,81 +5,155 @@
 
 .main-wrapper {
   text-align: center;
-  height: 100vh;
-  width: 100vw;
+  height: 800px;
 }
 
 .heading {
   color: gray;
-  font-size: 2.5vw;
+  font-size: 16px;
   margin-top: 5vh;
   margin-bottom: 5vh;
 }
 
 .origin-search-field {
-  height: 15vh;
+  height: 100px;
   width: 90vw;
-  margin-left: 5vw;
-  background-color: #EEEEEE;
+  margin: 0 5vw;
+  background-color: #eeeeee;
 }
 
-.btn {
+.btn-warning {
   color: white;
-  font-size: 2vw;
-  height: 8vh;
-  margin-top: 3.5vh;
-  line-height: 6.5vh;
+  font-size: 12px;
+  height: 50px;
+  margin: 25px 5px;
+  line-height: 40px;
 }
 
 .origin-search-field .btn {
-  width: 20vw;
+  width: 20%;
 }
 
 .conditional-search-field {
-  height: 40vh;
+  height: 200px;
   width: 90vw;
-  margin-left: 5vw;
-  padding-top: 3vh;
-  background-color: #EEEEEE;
+  margin: 0 5vw;
+  padding: 25px;
+  background-color: #eeeeee;
 }
 
-.conditional {
+.input-select {
   display: flex;
   justify-content: space-around;
 }
 
-.field-left p {
-  font-size: 2vh;
-  padding-top: 10px;
-  text-align: left;
+.conditional .form-group {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.conditional label {
+  font-size: 12px;
 }
 
 select {
   font-size: 1vh;
+  width: 20vw;
   height: 30px;
-  width: 25vw;
-}
-
-.field-right p {
-  font-size: 2vh;
-  padding-top: 10px;
-  text-align: left;
-}
-
-input {
-  font-size: 1vh;
-  height: 30px;
-  width: 53vw;
-}
-
-.input-left {
-  margin-right: 5px;
-}
-
-.input-right {
-  margin-left: 5px;
 }
 
 .search-btn .btn {
-  width: 80vw;
+  width: 90%;
+}
+
+.contact-field {
+  height: 160px;
+  width: 90vw;
+  margin: 0 5vw;
+  padding: 25px;
+  background-color: #eeeeee;
+  display: flex;
+  justify-content: space-around;
+  font-size: 12px;
+}
+
+.company-name {
+  font-size: 16px;
+  margin-top: 30px;
+}
+
+.company-information {
+  text-align: left;
+}
+
+@media (min-width: 1000px) {
+  .origin-search-field,
+  .conditional-search-field,
+  .contact-field {
+    width: 70vw;
+    margin: 0 15vw;
+  }
+}
+
+@media (max-width: 500px) {
+  .heading {
+    font-size: 13px;
+  }
+  
+  .btn-warning,
+  .contact-field {
+    font-size: 10px;
+  }
+
+  .company-name {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .origin-search-field {
+    height: 190px
+  }
+  
+  .btn-warning {
+  height: 30px;
+  margin: 10px 0 5px;
+  line-height: 20px;
+  }
+  
+  .origin-search-field .btn {
+    width: 80%;
+  }
+  
+  .conditional-search-field {
+    height: 310px;
+    padding: 30px;
+  }
+  
+  .input-select {
+    flex-direction: column;
+  }
+  
+  select {
+    width: 100%;
+  }
+  
+  .search-btn .btn {
+    width: 100%;
+  }
+  
+  .contact-field {
+    height: 200px;
+    text-align: left;
+    flex-direction: column;
+  }
+  
+  .company-name {
+    margin-top: 10px;
+  }
+  
+  footer {
+    margin-top: 200px;
+  }
 }

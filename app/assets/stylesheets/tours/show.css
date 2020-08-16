@@ -1,20 +1,163 @@
-.container {
-  margin: 0px;
+.btn-original {
+  font-size: 10px;
+  background-color: #eeeeee;
+  width: 80px;
+  margin-left: 10px;
 }
 
-.area {
-  height: 300px;
-  width: 90vw;
-  background-color: #EEEEEE;
-  margin: 30px 20px;
-  padding: 20px;
+.tour-name {
+  margin: 20px;
+  font-size: 30px;
 }
 
-.area p {
-  padding-bottom: 10px;
-  border-bottom: 1px solid gray;
+.tour-price-area {
+  display: flex;
+  margin: 20px;
+  font-size: 20px;
 }
 
-.nav-link {
-  color: gray;
+.tour-price {
+  margin-right: 20px;
+}
+
+.price-range {
+  color: red;
+  font-weight: bold;
+}
+
+.overview-area {
+  display: flex;
+  width: 100vw;
+  padding: 30px;
+}
+
+.overview-area-right {
+  width: 50%;
+}
+
+.overview-area-right .btn {
+  margin-top: 70px;
+  width: 100%;
+}
+
+.table {
+  text-align: center;
+}
+
+.table-top {
+  width: 50vw;
+  margin: 20px;
+  font-size: 16px;
+}
+
+.airplane-grade,
+.hotel-grade {
+  width: 100vw;
+}
+
+.airplane-grade p {
+  font-size: 15px;;
+  font-weight: bold;
+  margin: 30px;
+}
+
+.table-airplane,
+.table-hotel {
+  font-size: 15px;
+  margin: 30px;
+}
+
+.table-hotel {
+  margin-bottom: 80px;
+}
+
+.table-airplane th,
+.table-hotel th {
+  background-color: #eeeeee;
+  width: 50%;
+}
+
+.table-top td,
+.table-airplane td,
+.table-hotel td {
+  text-align: left;
+}
+
+.tab-recommend,
+.tab-schedule,
+.tab-information {
+  width: 100vw;
+}
+
+.recommend-area,
+.schedule-area {
+  background-color: #eeeeee;
+  padding: 30px;
+  margin: 30px 30px 80px;
+  font-size: 13px;
+}
+
+.information-area {
+  background-color: #eeeeee;
+  padding: 30px;
+  margin: 30px 30px 80px;
+}
+
+.information h2 {
+  font-size: 15px;
+}
+
+.information .table {
+  font-size: 13px;
+}
+
+.information p,
+.information a {
+  font-size: 10px;
+}
+
+.table-cancel {
+  width: 50vw;
+  margin: 20px;
+  font-size: 17px;
+}
+
+@media (max-width: 500px) {
+  .tab,
+  .table-airplane,
+  .table-hotel,
+  .table-schedule,
+  .recommend-area,
+  .schedule-area,
+  .information h2,
+  .information .table {
+    font-size: 12px;
+  }
+
+  .table-top {
+    font-size: 15px;
+  }
+
+  .tour-price-area {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 400px) {
+  .tab,
+  .tab-pane p,
+  .table-airplane,
+  .table-hotel,
+  .table-schedule {
+    font-size: 9px;
+  }
+
+  .table-top,
+  .table-cancel{
+    font-size: 10px;
+  }
+
+  .tour-price-area {
+    font-size: 12px;
+  }
 }

@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="bookings">
+    <h1 class="booking-id">予約 No. <%= @booking.id %>　:　詳細</h1>
+    <div class="admin-btn text-right mr-5">
+      <%= link_to '編集', edit_booking_path(@booking), class: 'btn btn-original' %>
+      <%= link_to '削除', @booking, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-original' %>
+    </div>
+    
+    <div class="request-form">
+      <h2>ツアー情報</h2>
+      
+      <table class="table table-bordered table-tour-information">
+        <tbody>
+          <tr>
+            <th scope="row">ツアー名</th>
+            <td><%= @booking.tour.tour_name %></td>
+          </tr>
+          <tr>
+            <th scope="row">出発地</th>
+            <td><%= @booking.tour.departure %></td>
+          </tr>
+          <tr>
+            <th scope="row">目的地</th>
+            <td><%= @booking.tour.arrival %>・<%= @booking.tour.city %></td>
+          </tr>
+          <tr>
+            <th scope="row">出発日</th>
+            <td> <%= @booking.departure_date %></td>
+          </tr>
+          <tr>
+            <th scope="row">旅行期間</th>
+            <td><%= @booking.tour.number_of_night %>泊<%= @booking.tour.length_of_stay %>日</td>
+          </tr>
+          <tr>
+            <th scope="row">基本料金</th>
+            <td><%= @booking.tour.base_price.to_s(:delimited) %>円</td>
+          </tr>
+          <tr>
+            <th scope="row">飛行機追加料金</th>
+            <td><%= @booking.airplane_grade.to_s(:delimited) %>円</td>
+          </tr>
+          <tr>
+            <th scope="row">ホテル追加料金</th>
+            <td><%= @booking.hotel_grade.to_s(:delimited) %>円</td>
+          </tr>
+          <tr>
+            <th scope="row">トータル料金</th>
+            <td><%= (@booking.airplane_grade.to_i + @booking.hotel_grade.to_i + @booking.tour.base_price.to_i).to_s(:delimited) %>円</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <h2>ユーザー情報</h2>
+      <table class="table table-bordered table-user-information">
+        <tbody>
+          <tr>
+            <th scope="row">申込者名</th>
+            <td><%= @booking.user.name %></td>
+          </tr>
+          <tr>
+            <th scope="row">メールアドレス</th>
+            <td><%= @booking.user.email %></td>
+          </tr>
+          <tr>
+            <th scope="row">備考欄</th>
+            <td><%= simple_format(@booking.remarks_column) %></td>
+          </tr>
+        </tbody>
+      </table>
+      
+    </div>
+  </div>
+</div>

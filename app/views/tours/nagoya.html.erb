@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="tab-all">
+    <ul class="nav nav-tabs tabs mt-5">
+      <li class="nav-item"><a href="<%= tours_path(@tours) %>" class="nav-link" >東京発</a></li>
+      <li class="nav-item"><a href="<%= nagoya_tours_path(@tours) %>" class="nav-link active" >名古屋発</a></li>
+      <li class="nav-item"><a href="<%= osaka_tours_path(@tours) %>" class="nav-link" >大阪発</a></li>
+      <li class="nav-item"><a href="<%= fukuoka_tours_path(@tours) %>" class="nav-link" >福岡発</a></li>
+      <% if logged_in? %>
+        <% if current_user == @user || current_user.admin? %>
+          <li class="nav-item"><a href="<%= new_tour_path(@tour) %>" class="nav-link" >ツアー投稿</a></li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+  
+  <div class="area-all">
+    <div class="area">
+      <p>中国</p>
+      <% if @tours = Tour.where(departure: "名古屋", arrival: "中国") %>
+        <%= render 'tours/tourlists', tours: @tours %>
+      <% end %>
+    </div>
+    <div class="area">
+      <p>台湾</p>
+      <% if @tours = Tour.where(departure: "名古屋", arrival: "台湾") %>
+        <%= render 'tours/tourlists', tours: @tours %>
+      <% end %>
+    </div>
+    <div class="area">
+      <p>韓国</p>
+      <% if @tours = Tour.where(departure: "名古屋", arrival: "韓国") %>
+        <%= render 'tours/tourlists', tours: @tours %>
+      <% end %>
+    </div>
+    <div class="area">
+      <p>タイ</p>
+      <% if @tours = Tour.where(departure: "名古屋", arrival: "タイ") %>
+        <%= render 'tours/tourlists', tours: @tours %>
+      <% end %>
+    </div>
+    <div class="area">
+      <p>ベトナム</p>
+      <% if @tours = Tour.where(departure: "名古屋", arrival: "ベトナム") %>
+        <%= render 'tours/tourlists', tours: @tours %>
+      <% end %>
+    </div>
+    <div class="area">
+      <p>シンガポール</p>
+      <% if @tours = Tour.where(departure: "名古屋", arrival: "シンガポール") %>
+        <%= render 'tours/tourlists', tours: @tours %>
+      <% end %>
+    </div>
+    <div class="area">
+      <p>マレーシア</p>
+      <% if @tours = Tour.where(departure: "名古屋", arrival: "マレーシア") %>
+        <%= render 'tours/tourlists', tours: @tours %>
+      <% end %>
+    </div>
+    <div class="area">
+      <p>フィリピン</p>
+      <% if @tours = Tour.where(departure: "名古屋", arrival: "フィリピン") %>
+        <%= render 'tours/tourlists', tours: @tours %>
+      <% end %>
+    </div>
+  </div>
+</div>

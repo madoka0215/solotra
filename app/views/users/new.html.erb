@@ -1,0 +1,35 @@
+<div class="account ml-5">
+  <h2>新規登録</h2>
+
+  <%= form_with(model: @user, local: true) do |f| %>
+  <%= render 'layouts/error_messages', model: f.object %>
+    
+    <div class="form-group">
+      <%= f.label :name, 'name' %><br />
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :email, 'email' %><br />
+      <%= f.email_field :email, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password, 'password' %><br />
+      <%= f.password_field :password, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password_confirmation, "Password (確認)" %><br />
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "新規登録", class: 'btn btn-warning' %>
+    </div>
+  <% end %>
+  
+  <div class="link">
+    <%= link_to "ログインはこちら", login_path %>
+  </div>
+</div>

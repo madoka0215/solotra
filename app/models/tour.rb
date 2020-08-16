@@ -1,10 +1,6 @@
 class Tour < ApplicationRecord
-  class Tour < ActiveRecord::Base
-    mount_uploader :image, ImageUploader
-  end
+  mount_uploader :image, ImageUploader
   
-  belongs_to :user, optional: true
-
   validates :tour_name, presence: true, length: { maximum: 50 }
   validates :image,
             :recommend_point,
@@ -12,17 +8,28 @@ class Tour < ApplicationRecord
   validates :number_of_night,
             :length_of_stay, presence: true, length: { maximum: 2 }
   validates :departure,
-            :arrival, presence: true, length: { maximum: 10 }
+            :arrival,
+            :city, presence: true, length: { maximum: 15 }
   validates :base_price,
             :airplane_b_price,
             :airplane_c_price,
             :airplane_d_price,
             :hotel_b_price,
             :hotel_c_price,
-            :hotel_d_price, presence: true, length: { maximum: 7 }  
+            :hotel_d_price, presence: true, length: { maximum: 7 } 
+  
+  belongs_to :user, optional: true
+  has_many :users, through: :bookings
+  has_many :bookings
 
-  def self.search(search)
-      return Tour.all unless search
-      Tour.where(['departure AND arrival AND length_of_stay ',"%#{search}%","%#{search}%","%#{search}%"])
-  end
+  scope :get_by_departure, ->(departure) {
+    where(departure: departure)
+  }
+  scope :get_by_arrival, ->(arrival) {
+    where(arrival: arrival)
+  }
+
+  scope :get_by_days, ->(length_of_stay) {
+    where(length_of_stay: length_of_stay)
+  }
 end

@@ -3,16 +3,35 @@
 </div>
 
 <div class="main-wrapper">
-  <div class="origin-search">
+  <div class="origin-search" id="search" >
     <h1 class="heading">出発地から探す</h1>
     <div class="origin-search-field">
       <a href="/tours" class="btn btn-warning">東京発</a>
-      <a href="/tours" class="btn btn-warning">名古屋発</a>
-      <a href="/tours" class="btn btn-warning">大阪発</a>
-      <a href="/tours" class="btn btn-warning">福岡発</a>
+      <a href="/tours/nagoya" class="btn btn-warning">名古屋発</a>
+      <a href="/tours/osaka" class="btn btn-warning">大阪発</a>
+      <a href="/tours/fukuoka" class="btn btn-warning">福岡発</a>
+    </div>
+    
+    <%= render 'tours/search_form' %>
+  </div>
+  
+  <h1 class="heading">お問い合わせ</h1>
+  <div class="contact-field">
+    <div class="contact-field-left">
+      <p class="company-name">株式会社ソロトラベル</p>
+      <p class="company-name-en">Solo Travel Co., Ltd.</p>
+    </div>
+    <div class="contact-field-right">
+      <p class="company-information">
+        〒100-XXXX<br>
+        東京都千代田区丸の内 XXビル X階<br>
+        <br>
+        TEL 03-0000-XXXX<br>
+        <br>
+        営業時間 10:00〜19:00
+      </p>
     </div>
   </div>
-
-  <%= render 'tours/search' %>
-
 </div>
+  
+

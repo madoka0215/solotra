@@ -1,189 +1,68 @@
 <div class="container">
-  <ul class="nav nav-tabs mt-5">
-    <li class="nav-item"><a href="#tokyo" class="nav-link active" data-toggle="tab">東京発</a></li>
-    <li class="nav-item"><a href="#nagoya" class="nav-link" data-toggle="tab">名古屋発</a></li>
-    <li class="nav-item"><a href="#osaka" class="nav-link" data-toggle="tab">大阪発</a></li>
-    <li class="nav-item"><a href="#fukuoka" class="nav-link" data-toggle="tab">福岡発</a></li>
-  </ul>
-  <div class="tab-content">
-    <div class="tab-pane active" id="tokyo">
-      <div class="area">
-        <p>中国・香港</p>
-        <%= render 'tours/tours', tours: @tours %>
-      </div>
-      <div class="area">
-        <p>台湾</p>
-      </div>
-      <div class="area">
-        <p>韓国</p>
-      </div>
-      <div class="area">
-        <p>タイ</p>
-      </div>
-      <div class="area">
-        <p>ベトナム</p>
-      </div>
-      <div class="area">
-        <p>シンガポール</p>
-      </div>
-      <div class="area">
-        <p>マレーシア</p>
-      </div>
-      <div class="area">
-        <p>フィリピン</p>
-      </div>
+  <div class="tab-all">
+    <ul class="nav nav-tabs tabs mt-5">
+      <li class="nav-item"><a href="<%= tours_path(@tours) %>" class="nav-link active" >東京発</a></li>
+      <li class="nav-item"><a href="<%= nagoya_tours_path(@tours) %>" class="nav-link" >名古屋発</a></li>
+      <li class="nav-item"><a href="<%= osaka_tours_path(@tours) %>" class="nav-link" >大阪発</a></li>
+      <li class="nav-item"><a href="<%= fukuoka_tours_path(@tours) %>" class="nav-link" >福岡発</a></li>
+      <% if logged_in? %>
+        <% if current_user == @user || current_user.admin? %>
+          <li class="nav-item"><a href="<%= new_tour_path(@tour) %>" class="nav-link" >ツアー投稿</a></li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+  
+  <div class="area-all">
+    <div class="area">
+      <p>中国</p>
+      <% if @tours = Tour.where(departure: "東京", arrival: "中国") %>
+        <%= render 'tours/tourlists', tours: @tours %>
+      <% end %>
     </div>
-
-    <div class="tab-pane" id="nagoya">
-      <div class="area">
-        <p>中国・香港</p>
-      </div>
-      <div class="area">
-        <p>台湾</p>
-      </div>
-      <div class="area">
-        <p>韓国</p>
-      </div>
-      <div class="area">
-        <p>タイ</p>
-      </div>
-      <div class="area">
-        <p>ベトナム</p>
-      </div>
-      <div class="area">
-        <p>シンガポール</p>
-      </div>
-      <div class="area">
-        <p>マレーシア</p>
-      </div>
-      <div class="area">
-        <p>フィリピン</p>
-      </div>
+    <div class="area">
+      <p>台湾</p>
+      <% if @tours = Tour.where(departure: "東京", arrival: "台湾") %>
+        <%= render 'tours/tourlists', tours: @tours %>
+      <% end %>
     </div>
-
-    <div class="tab-pane" id="osaka">
-      <div class="area">
-        <p>中国・香港</p>
-      </div>
-      <div class="area">
-        <p>台湾</p>
-      </div>
-      <div class="area">
-        <p>韓国</p>
-      </div>
-      <div class="area">
-        <p>タイ</p>
-      </div>
-      <div class="area">
-        <p>ベトナム</p>
-      </div>
-      <div class="area">
-        <p>シンガポール</p>
-      </div>
-      <div class="area">
-        <p>マレーシア</p>
-      </div>
-      <div class="area">
-        <p>フィリピン</p>
-      </div>
+    <div class="area">
+      <p>韓国</p>
+      <% if @tours = Tour.where(departure: "東京", arrival: "韓国") %>
+        <%= render 'tours/tourlists', tours: @tours %>
+      <% end %>
     </div>
-
-    <div class="tab-pane" id="fukuoka">
-      <div class="area">
-        <p>中国・香港</p>
-      </div>
-      <div class="area">
-        <p>台湾</p>
-      </div>
-      <div class="area">
-        <p>韓国</p>
-      </div>
-      <div class="area">
-        <p>タイ</p>
-      </div>
-      <div class="area">
-        <p>ベトナム</p>
-      </div>
-      <div class="area">
-        <p>シンガポール</p>
-      </div>
-      <div class="area">
-        <p>マレーシア</p>
-      </div>
-      <div class="area">
-        <p>フィリピン</p>
-      </div>
+    <div class="area">
+      <p>タイ</p>
+      <% if @tours = Tour.where(departure: "東京", arrival: "タイ") %>
+        <%= render 'tours/tourlists', tours: @tours %>
+      <% end %>
+    </div>
+    <div class="area">
+      <p>ベトナム</p>
+      <% if @tours = Tour.where(departure: "東京", arrival: "ベトナム") %>
+        <%= render 'tours/tourlists', tours: @tours %>
+      <% end %>
+    </div>
+    <div class="area">
+      <p>シンガポール</p>
+      <% if @tours = Tour.where(departure: "東京", arrival: "シンガポール") %>
+        <%= render 'tours/tourlists', tours: @tours %>
+      <% end %>
+    </div>
+    <div class="area">
+      <p>マレーシア</p>
+      <% if @tours = Tour.where(departure: "東京", arrival: "マレーシア") %>
+        <%= render 'tours/tourlists', tours: @tours %>
+      <% end %>
+    </div>
+    <div class="area">
+      <p>フィリピン</p>
+      <% if @tours = Tour.where(departure: "東京", arrival: "フィリピン") %>
+        <%= render 'tours/tourlists', tours: @tours %>
+      <% end %>
     </div>
   </div>
-</div>
-
-<div class="admin-area">
-  <% if current_user.admin? %>
-
-    <%= form_with(model: @tour, local: true) do |f| %>
-      <div class="form-group">
-        <%= f.label :tour_name, "ツアー名" %>
-        <%= f.text_field :tour_name %>
-      </div>
-      <div class="form-group">
-        <%= f.label :image, "イメージ画像" %>
-        <%= f.file_field :image %>
-      </div>
-      <div class="form-group">
-        <%= f.label :number_of_night, "宿泊日数" %>
-        <%= f.select :number_of_night, {'1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6}, { include_blank: '選択してください'} %>
-      </div>
-      <div class="form-group">
-        <%= f.label :length_of_stay, "滞在日数" %>
-        <%= f.select :length_of_stay, {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7}, { include_blank: '選択してください'} %>
-      </div>
-      <div class="form-group">
-        <%= f.label :departure, "出発地" %>
-        <%= f.select :departure, {'東京': '東京', '名古屋': '名古屋', '大阪': '大阪', '福岡': '福岡'}, { include_blank: '選択してください'} %>
-      </div>
-      <div class="form-group">
-        <%= f.label :arrival, "目的地" %>
-        <%= f.select :arrival, {'中国': '中国', '台湾': '台湾', '韓国': '韓国', 'タイ': 'タイ', 'ベトナム': 'ベトナム', 'シンガポール': 'シンガポール', 'マレーシア': 'マレーシア', 'フィリピン': 'フィリピン'}, { include_blank: '選択してください'} %>
-      </div>
-      <div class="form-group">
-        <%= f.label :base_price, "基本料金" %>
-        <%= f.text_field :base_price %>
-      </div>
-      <div class="form-group">
-        <%= f.label :airplane_b_price, "飛行機追加料金(B)" %>
-        <%= f.text_field :airplane_b_price %>
-      </div>
-      <div class="form-group">
-        <%= f.label :airplane_c_price, "飛行機追加料金(C)" %>
-        <%= f.text_field :airplane_c_price %>
-      </div>
-      <div class="form-group">
-        <%= f.label :airplane_d_price, "飛行機追加料金(D)" %>
-        <%= f.text_field :airplane_d_price %>
-      </div>
-      <div class="form-group">
-        <%= f.label :hotel_b_price, "ホテル追加料金(B)" %>
-        <%= f.text_field :hotel_b_price %>
-      </div>
-      <div class="form-group">
-        <%= f.label :hotel_c_price, "ホテル追加料金(C)" %>
-        <%= f.text_field :hotel_c_price %>
-      </div>
-      <div class="form-group">
-        <%= f.label :hotel_d_price, "ホテル追加料金(D)" %>
-        <%= f.text_field :hotel_d_price %>
-      </div>
-      <div class="form-group">
-        <%= f.label :recommend_point, "おすすめポイント" %>
-        <%= f.text_area :recommend_point %>
-      </div>
-      <div class="form-group">
-        <%= f.label :schedule, "スケジュール" %>
-        <%= f.text_area :schedule %>
-      </div>
-
-      <%= f.submit '投稿', class: 'btn btn-warning btn-block' %>
-
-    <% end %>
-  <% end %>
+ 
+  </div>
 </div>

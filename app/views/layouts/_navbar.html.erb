@@ -1,17 +1,22 @@
 <header>
   <nav class="navbar navbar-expand-sm navbar-light">
-    <a class="navbar-brand" href="/"><img src="../assets/solotra.png"></a>
+    <a class="navbar-brand" href="/"><img src="../../../assets/solotra.png"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav">
-        <li class="nav-item"><a href="#" class="nav-link">ツアー検索</a></li>
-        <% if user_signed_in? %>
-          <li class="nav-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
+        <% if logged_in? %>
+          <% if current_user == @user || current_user.admin? %>
+            <li class="nav-item"><%= link_to "予約管理", bookings_path, class: 'nav-link' %></li>
+          <% end %>
+        <% end %>
+        <li class="nav-item"><%= link_to "ツアー検索", root_path(anchor: 'search'), class: 'nav-link' %></li>
+        <% if logged_in? %>
+          <li class="nav-item"><%= link_to "ログアウト", logout_path, method: :delete, class: 'nav-link' %></li>
         <% else %>
-          <li class="nav-item"><%= link_to "ログイン", new_user_session_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to "ログイン", login_path, class: 'nav-link' %></li>
         <% end %>
       </ul>
     </div>
