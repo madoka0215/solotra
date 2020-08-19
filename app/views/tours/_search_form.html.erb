@@ -17,6 +17,7 @@
             <%= select_tag 'length_of_stay', options_for_select({'2日間': 2, '3日間': 3, '4日間': 4, '5日間': 5, '6日間': 6, '7日間': 7}), include_blank: '旅行日数をお選びください' %>
           </div>
         </div>
+        <p>※何も選択していない場合、全ツアーを表示します</p>
         <div class="search-btn">
           <%= submit_tag 'この条件で検索', class: 'btn btn-warning' %>
         </div>

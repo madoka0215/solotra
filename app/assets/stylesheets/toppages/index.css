@@ -5,7 +5,7 @@
 
 .main-wrapper {
   text-align: center;
-  height: 800px;
+  height: 1000px;
 }
 
 .heading {
@@ -38,7 +38,7 @@
 }
 
 .conditional-search-field {
-  height: 180px;
+  height: 200px;
   width: 90vw;
   margin: 0 5vw;
   padding: 25px;
@@ -59,6 +59,11 @@
   font-size: 12px;
 }
 
+.conditional p {
+  font-size: 10px;
+  color: gray;
+}
+
 select {
   font-size: 1vh;
   width: 20vw;
@@ -67,7 +72,6 @@ select {
 
 
 .search-btn .btn {
-  margin-top: 5px;
   width: 90%;
 }
 
@@ -141,7 +145,7 @@ select {
   }
   
   .conditional-search-field {
-    height: 310px;
+    height: 350px;
     padding: 30px;
   }
   
