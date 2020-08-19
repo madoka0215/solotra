@@ -9,6 +9,10 @@
   background-color: #eeeeee;
 }
 
+.tour-image {
+  width: 100vw;
+}
+
 .tour-name {
   margin: 20px;
   font-size: 30px;
