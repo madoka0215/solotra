@@ -9,6 +9,10 @@
   border-bottom: 1px solid gray;
 }
 
+.tour-list {
+  margin-bottom: 10px;
+}
+
 .btn-light {
   font-size: 10px;
   margin: 0 0 50px 20px;
