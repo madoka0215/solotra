@@ -80,7 +80,8 @@ class BookingsController < ApplicationController
   
   def require_user_logged_in
     unless logged_in?
-      redirect_to new_user_session_url
+      redirect_to login_url
+      flash[:danger] = 'ツアーの申込にはログインが必要です'
     end
   end
 
