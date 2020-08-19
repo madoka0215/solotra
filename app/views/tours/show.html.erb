@@ -1,16 +1,15 @@
-<div class="top-wrapper">
-  
+<div class="wrapper">
   <% if logged_in? %>
     <% if current_user == @user || current_user.admin? %>
-      <div class="admin-btn text-right mr-3">
-        <%= link_to '編集', edit_tour_path(@tour), class: 'btn btn-original' %>
+      <div class="admin-btn text-right">
+        <%= link_to '編集', edit_tour_path(@tour), class: 'btn btn-original background' %>
         <%= link_to '削除', @tour, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-original' %>
       </div>
     <% end %>
   <% end %>
   
   <h1 class="tour-name"><%= @tour.tour_name %></h1>
-  <%= image_tag(@tour.image.url) %>
+  <%= image_tag(@tour.image.url, class: "tour-image") %>
 
   <div class="overview">
     <div class="tour-price-area">
@@ -28,7 +27,7 @@
             </tr>
             <tr>
               <th scope="row">目的地</th>
-              <td>　<%= @tour.arrival %>・<%= @tour.city %></td>
+              <td>　<%= @tour.city %></td>
             </tr>
             <tr>
               <th scope="row">日数</th>
@@ -38,16 +37,17 @@
         </table>
       </div>
       <div class="overview-area-right">
-        <%= link_to 'このツアーに申し込む', new_tour_booking_path(@tour), class: 'btn btn-warning' %>
+        <%= render 'considerations/consider_button', tour: @tour %>
+        <%= link_to 'ツアーに申し込む', new_tour_booking_path(@tour), class: 'btn btn-warning' %>
       </div>
     </div>
   </div>
 
     <ul class="nav nav-tabs mt-5 tab">
       <li class="nav-item"><a href="#tab1" data-toggle="tab" class="nav-link active">旅行代金</a></li>
-      <li class="nav-item"><a href="#tab2" class="nav-link" data-toggle="tab">おすすめポイント</a></li>
+      <li class="nav-item"><a href="#tab2" class="nav-link" data-toggle="tab">おすすめ</a></li>
       <li class="nav-item"><a href="#tab3" class="nav-link" data-toggle="tab">旅行日程表</a></li>
-      <li class="nav-item"><a href="#tab4" class="nav-link" data-toggle="tab">ご案内・注意事項</a></li>
+      <li class="nav-item"><a href="#tab4" class="nav-link" data-toggle="tab">ご案内</a></li>
     </ul>
 
     <div class="tab-content detail">
@@ -117,19 +117,19 @@
       </div>
 
       <div class="tab-pane tab-recommend" id="tab2">
-        <div class="recommend-area">
+        <div class="recommend-area background">
           <%= simple_format(@tour.recommend_point) %>
         </div>
       </div>
 
       <div class="tab-pane tab-schedule" id="tab3">
-        <div class="schedule-area">
+        <div class="schedule-area background">
           <%= simple_format(@tour.schedule) %>
         </div>
       </div>
 
       <div class="tab-pane tab-information" id="tab4">
-        <div class="information-area">
+        <div class="information-area background">
           <%= render 'tours/information' %>
         </div>
       </div>

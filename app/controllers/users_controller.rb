@@ -5,7 +5,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
     if @user.save
       flash[:success] = 'ユーザを登録しました。'
       redirect_to login_url
@@ -13,6 +12,11 @@ class UsersController < ApplicationController
       flash.now[:danger] = 'ユーザの登録に失敗しました。'
       render :new
     end
+  end
+  
+  def thinks
+    @user = User.find(params[:id])
+    @considerations = @user.consideration_tours.page(params[:page])
   end
   
   private

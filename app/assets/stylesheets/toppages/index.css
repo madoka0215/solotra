@@ -15,31 +15,33 @@
   margin-bottom: 5vh;
 }
 
+.background {
+  background-color: #eeeeee;
+}
+
 .origin-search-field {
   height: 100px;
   width: 90vw;
   margin: 0 5vw;
-  background-color: #eeeeee;
 }
 
 .btn-warning {
   color: white;
   font-size: 12px;
   height: 50px;
-  margin: 25px 5px;
-  line-height: 40px;
+  line-height: 38px;
 }
 
 .origin-search-field .btn {
+  margin: 25px 5px;
   width: 20%;
 }
 
 .conditional-search-field {
-  height: 200px;
+  height: 180px;
   width: 90vw;
   margin: 0 5vw;
   padding: 25px;
-  background-color: #eeeeee;
 }
 
 .input-select {
@@ -63,7 +65,9 @@ select {
   height: 30px;
 }
 
+
 .search-btn .btn {
+  margin-top: 5px;
   width: 90%;
 }
 
@@ -72,7 +76,6 @@ select {
   width: 90vw;
   margin: 0 5vw;
   padding: 25px;
-  background-color: #eeeeee;
   display: flex;
   justify-content: space-around;
   font-size: 12px;
@@ -87,7 +90,18 @@ select {
   text-align: left;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1030px) {
+  .top-wrapper img {
+    width: 70vw;
+    margin-left: 15vw;
+  }
+  
+  .area,
+  .tabs {
+    margin: 30px 300px;
+  }
+
+  
   .origin-search-field,
   .conditional-search-field,
   .contact-field {
@@ -117,12 +131,12 @@ select {
   }
   
   .btn-warning {
-  height: 30px;
-  margin: 10px 0 5px;
-  line-height: 20px;
+    height: 30px;
+    line-height: 20px;
   }
   
   .origin-search-field .btn {
+    margin: 10px 0 5px;
     width: 80%;
   }
   
@@ -151,9 +165,5 @@ select {
   
   .company-name {
     margin-top: 10px;
-  }
-  
-  footer {
-    margin-top: 200px;
   }
 }

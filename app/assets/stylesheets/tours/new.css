@@ -1,13 +1,8 @@
-.tab-all {
-  width: 100vw;
-}
-
 .admin {
   width: 100vw;
 }
 
 .admin-area {
-  background-color : #eeeeee;
   margin: 30px;
   padding: 40px;
 }
@@ -33,7 +28,7 @@
   font-size: 12px;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1030px) {
   .admin-area {
     margin: 30px 300px;
   }

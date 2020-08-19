@@ -1,0 +1,38 @@
+.thinks {
+  width: 100vw;
+}
+
+.thinks-area {
+  margin: 50px;
+}
+
+.thinks-area h1 {
+  font-size: 24px;
+}
+
+.thinks-all {
+  margin-top: 30px;
+  padding: 30px;
+}
+
+@media (min-width: 1030px) {
+  .thinks-area {
+    margin: 50px 300px;
+  }
+}
+
+@media (max-width: 500px) {
+  .thinks-area {
+    margin: 30px;
+  }
+  
+  .thinks-area h1 {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .thinks-area {
+    margin: 20px;
+  }
+}

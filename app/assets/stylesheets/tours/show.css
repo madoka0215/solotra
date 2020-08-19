@@ -1,8 +1,12 @@
+.admin-btn {
+  margin-right: 30px;
+}
+
 .btn-original {
   font-size: 10px;
-  background-color: #eeeeee;
   width: 80px;
   margin-left: 10px;
+  background-color: #eeeeee;
 }
 
 .tour-name {
@@ -27,17 +31,18 @@
 
 .overview-area {
   display: flex;
-  width: 100vw;
   padding: 30px;
 }
 
 .overview-area-right {
-  width: 50%;
+  width: 40%;
 }
 
 .overview-area-right .btn {
-  margin-top: 70px;
+  margin: 30px 0 0;
   width: 100%;
+  height: 50px;
+  font-size: 12px;
 }
 
 .table {
@@ -91,14 +96,12 @@
 
 .recommend-area,
 .schedule-area {
-  background-color: #eeeeee;
   padding: 30px;
   margin: 30px 30px 80px;
   font-size: 13px;
 }
 
 .information-area {
-  background-color: #eeeeee;
   padding: 30px;
   margin: 30px 30px 80px;
 }
@@ -122,24 +125,80 @@
   font-size: 17px;
 }
 
+.table-cancel th {
+  width: 60%;
+}
+
+@media (min-width: 1030px) {
+  .admin-btn {
+    margin-right: 200px;
+  }
+  
+  .tour-image {
+    width: 70vw;
+    margin-left: 15vw;
+  }
+  
+  .tour-name {
+    margin-left: 200px;
+  }
+  
+  .overview-area-right .btn {
+    margin-left: 30px;
+  }
+  
+  .tab,
+  .table-airplane,
+  .table-hotel,
+  .overview-area,
+  .recommend-area,
+  .schedule-area,
+  .information-area {
+    margin: 30px 200px;
+  }
+  
+  .table-top {
+    width: 30vw;
+  }
+  
+  .tour-price-area,
+  .airplane-grade p {
+    margin-left: 200px;
+  }
+}
+
 @media (max-width: 500px) {
   .tab,
+  .table-top,
   .table-airplane,
   .table-hotel,
   .table-schedule,
   .recommend-area,
   .schedule-area,
-  .information h2,
-  .information .table {
+  .information h2 {
     font-size: 12px;
   }
 
-  .table-top {
-    font-size: 15px;
-  }
-
   .tour-price-area {
-    font-size: 17px;
+    font-size: 16px;
+  }
+  
+  .table-top {
+    margin: 0 10px 0 0;
+  }
+  
+  .overview-area {
+    padding: 0 20px 0;
+  }
+  
+  .overview-area-right .btn {
+    font-size: 10px;
+    height: 40px;
+    margin-top: 15px;
+  }
+  
+  .information .table {
+    font-size: 10px;
   }
 }
 
@@ -148,13 +207,14 @@
   .tab-pane p,
   .table-airplane,
   .table-hotel,
-  .table-schedule {
+  .table-schedule,
+  .information .table {
     font-size: 9px;
   }
 
   .table-top,
   .table-cancel{
-    font-size: 10px;
+    font-size: 9px;
   }
 
   .tour-price-area {

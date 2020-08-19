@@ -19,8 +19,10 @@ class Tour < ApplicationRecord
             :hotel_d_price, presence: true, length: { maximum: 7 } 
   
   belongs_to :user, optional: true
-  has_many :users, through: :bookings
   has_many :bookings
+  has_many :users, through: :bookings
+  has_many :considerations
+  has_many :users, through: :considerations
 
   scope :get_by_departure, ->(departure) {
     where(departure: departure)

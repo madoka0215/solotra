@@ -1,7 +1,7 @@
 <div class="container">
   <div class="bookings">
     <h1 class="booking-id">予約 No. <%= @booking.id %>　:　詳細</h1>
-    <div class="admin-btn text-right mr-5">
+    <div class="admin-btn text-right">
       <%= link_to '編集', edit_booking_path(@booking), class: 'btn btn-original' %>
       <%= link_to '削除', @booking, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-original' %>
     </div>

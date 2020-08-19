@@ -7,17 +7,22 @@
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav">
-        <% if logged_in? %>
-          <% if current_user == @user || current_user.admin? %>
-            <li class="nav-item"><%= link_to "予約管理", bookings_path, class: 'nav-link' %></li>
-          <% end %>
-        <% end %>
         <li class="nav-item"><%= link_to "ツアー検索", root_path(anchor: 'search'), class: 'nav-link' %></li>
-        <% if logged_in? %>
-          <li class="nav-item"><%= link_to "ログアウト", logout_path, method: :delete, class: 'nav-link' %></li>
-        <% else %>
-          <li class="nav-item"><%= link_to "ログイン", login_path, class: 'nav-link' %></li>
-        <% end %>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">メニュー</a>
+          <ul class="dropdown-menu dropdown-menu-right">
+            <% if logged_in? %>
+              <% if current_user == @user || current_user.admin? %>
+                <li class="dropdown-item"><%= link_to "予約管理", bookings_path, class: 'nav-link' %></li>
+                <li class="dropdown-item"><%= link_to "ツアー投稿", new_tour_path(@tour), class: 'nav-link' %></li>
+              <% end %>
+              <li class="dropdown-item"><%= link_to "検討リスト", thinks_user_path(current_user), class: 'nav-link' %></li>
+              <li class="dropdown-item"><%= link_to "ログアウト", logout_path, method: :delete, class: 'nav-link' %></li>
+            <% else %>
+              <li class="dropdown-item"><%= link_to "ログイン", login_path, class: 'nav-link' %></li>
+            <% end %>
+          </ul>
+        </li>
       </ul>
     </div>
   </nav>

@@ -60,7 +60,7 @@ class ToursController < ApplicationController
   
   def set_index
     @tour = Tour.new
-    @tours = Tour.order('created_at DESC')
+    @tours = Tour.order('created_at DESC').page(params[:page])
     if params[:departure].present?
       @tours = @tours.get_by_departure params[:departure]
     end

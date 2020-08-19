@@ -1,5 +1,9 @@
+.account {
+  margin-left: 50px;
+  height: 800px;
+}
 
-h2 {
+.account h2 {
   margin: 5vh 0 3vh 0;
 }
 
@@ -14,4 +18,10 @@ h2 {
 
 .link {
   margin: 30px 0 200px;
+}
+
+@media (min-width: 1030px) {
+  .account {
+    margin-left: 300px;
+  }
 }

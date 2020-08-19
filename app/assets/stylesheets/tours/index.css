@@ -1,6 +1,14 @@
 .container {
   margin: 0;
-  padding-left: 0;
+  padding: 0;
+}
+
+.tab-all {
+  width: 100vw;
+}
+
+.nav-link {
+  color: gray;
 }
 
 .area-all {
@@ -18,13 +26,24 @@
   border-bottom: 1px solid gray;
 }
 
-.nav-link {
-  color: gray;
+@media (min-width: 1030px) {
+  .area {
+    margin: 30px 300px;
+  }
 }
 
-@media (min-width: 1000px) {
-  .area,
-  .tabs {
-    margin: 30px 300px;
+@media (max-width: 500px) {
+  .tabs,
+  .area p,
+  .tour-list {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .tabs,
+  .area p,
+  .tour-list {
+    font-size: 9px;
   }
 }

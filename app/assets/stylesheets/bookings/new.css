@@ -67,7 +67,7 @@
   margin-top: 40px;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1030px) {
   .attention {
     margin: 30px 300px;
   }

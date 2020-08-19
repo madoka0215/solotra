@@ -6,6 +6,12 @@
   .navbar-brand img {
     width: 70px;
   }
+  
+  .nav-link,
+  .nav-item,
+  .dropdown-item {
+    font-size: 13px;
+  }
 }
 
 @media (max-width: 400px) {

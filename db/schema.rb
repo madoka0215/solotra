@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_16_051057) do
+ActiveRecord::Schema.define(version: 2020_08_16_072318) do
 
   create_table "bookings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "departure_date"
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 2020_08_16_051057) do
     t.string "status", default: "未対応"
     t.index ["tour_id"], name: "index_bookings_on_tour_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "considerations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "tour_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tour_id"], name: "index_considerations_on_tour_id"
+    t.index ["user_id", "tour_id"], name: "index_considerations_on_user_id_and_tour_id", unique: true
+    t.index ["user_id"], name: "index_considerations_on_user_id"
   end
 
   create_table "tours", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -60,5 +70,7 @@ ActiveRecord::Schema.define(version: 2020_08_16_051057) do
 
   add_foreign_key "bookings", "tours"
   add_foreign_key "bookings", "users"
+  add_foreign_key "considerations", "tours"
+  add_foreign_key "considerations", "users"
   add_foreign_key "tours", "users"
 end
