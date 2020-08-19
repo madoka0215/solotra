@@ -1,5 +1,8 @@
+.search-results-area {
+  width: 100vw;
+}
+
 .search-results {
-  width: 90vw;
   margin: 30px 20px;
   padding: 20px;
 }
@@ -16,4 +19,10 @@
 .btn-light {
   font-size: 10px;
   margin: 0 0 50px 20px;
+}
+
+@media (min-width: 1030px) {
+  .search-results {
+    margin: 30px 300px;
+  }
 }

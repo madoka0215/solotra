@@ -1,8 +1,10 @@
 <div class="container">
-  <div class="search-results background">
-    <p>検索結果</p>
-      <%= render 'tours/tourlists', tours: @tours %>
+  <div class="search-results-area">
+    <div class="search-results background">
+      <p>検索結果</p>
+        <%= render 'tours/tourlists', tours: @tours %>
+    </div>
+    
+    <%= link_to '検索画面に戻る', root_path(anchor: 'search'), class: 'btn btn-light' %>
   </div>
-  
-  <%= link_to '検索画面に戻る', root_path(anchor: 'search'), class: 'btn btn-light' %>
 </div>
