@@ -6,3 +6,19 @@ ja:
         airplane_grade: 飛行機グレード
         hotel_grade: ホテルグレード
         
+      tour:
+        tour_name: ツアー名
+        image: 画像
+        recommend_point: おすすめポイント
+        number_of_night: 宿泊日数
+        length_of_stay: 滞在日数
+        departure: 出発地
+        arrival: 目的地(国)
+        city: 目的地(都市)
+        base_price: 基本料金
+        airplane_b_price: 飛行機追加料金(B)
+        airplane_c_price: 飛行機追加料金(C)
+        airplane_d_price: 飛行機追加料金(D)
+        hotel_b_price: ホテル追加料金(B)
+        hotel_c_price: ホテル追加料金(C)
+        hotel_d_price: ホテル追加料金(D)

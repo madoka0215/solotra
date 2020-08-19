@@ -27,8 +27,8 @@ class Tour < ApplicationRecord
   scope :get_by_departure, ->(departure) {
     where(departure: departure)
   }
-  scope :get_by_arrival, ->(arrival) {
-    where(arrival: arrival)
+  scope :get_by_city, ->(city) {
+    where(city: city)
   }
 
   scope :get_by_days, ->(length_of_stay) {

@@ -64,8 +64,8 @@ class ToursController < ApplicationController
     if params[:departure].present?
       @tours = @tours.get_by_departure params[:departure]
     end
-    if params[:arrival].present?
-      @tours = @tours.get_by_arrival params[:arrival]
+    if params[:city].present?
+      @tours = @tours.get_by_city params[:city]
     end
     if params[:length_of_stay].present?
       @tours = @tours.get_by_days params[:length_of_stay]
