@@ -57,15 +57,23 @@
           <div class="form-left">
             <%= f.label :airplane_grade, "飛行機グレード" %>　<span class="badge badge-secondary">必須</span>
           </div>
-            <%= f.select :airplane_grade, {'A : LCC (預け荷物なし)': 0, 'B : LCC (預け荷物あり)': @tour.airplane_b_price, 'C : エコノミー (預け荷物あり)': @tour.airplane_c_price, 'D : ビジネス (預け荷物あり)': @tour.airplane_c_price}, { include_blank: '選択してください'} %>
+          <div class="grade-value">
+            <%= f.select :airplane_grade, {'A : LCC (預け荷物なし)': 0, 'B : LCC (預け荷物あり)': @tour.airplane_b_price, 'C : エコノミー (預け荷物あり)': @tour.airplane_c_price, 'D : ビジネス (預け荷物あり)': @tour.airplane_c_price}, { include_blank: '選択してください'}, {id: 'airplane-select'} %>
+            <div id="airplane-value"></div>
+          </div>
+          
         </div>
         <div class="form-group request">
           <div class="form-left">
             <%= f.label :hotel_grade, "ホテルグレード" %>　<span class="badge badge-secondary">必須</span>
           </div>
-            <%= f.select :hotel_grade, {'A : ホステル': 0, 'B : ホテル (★ 〜 ★★)': @tour.hotel_b_price, 'C : ホテル (★★★ 〜 ★★★★)': @tour.hotel_c_price, 'D : ホテル (★★★★★)': @tour.hotel_d_price}, { include_blank: '選択してください'} %>
+          <div class="grade-value">
+            <%= f.select :hotel_grade, {'A : ホステル': 0, 'B : ホテル (★ 〜 ★★)': @tour.hotel_b_price, 'C : ホテル (★★★ 〜 ★★★★)': @tour.hotel_c_price, 'D : ホテル (★★★★★)': @tour.hotel_d_price}, { include_blank: '選択してください'}, {id: 'hotel-select'} %>
+            <div id="hotel-value"></div>
+          </div>
+          
         </div>
-        
+
         
         <div class="request">
           <div class="form-left user-name">
@@ -99,3 +107,14 @@
     </div>
   </div>
 </div>
+
+<script>
+  $('#airplane-select').on('change', (e)=> {
+    console.log(e.target.value)
+    $('#airplane-value').text(Number(e.target.value).toLocaleString()+'円')
+  })
+  $('#hotel-select').on('change', (e)=> {
+    console.log(e.target.value)
+    $('#hotel-value').text(Number(e.target.value).toLocaleString()+'円')
+  })
+</script>

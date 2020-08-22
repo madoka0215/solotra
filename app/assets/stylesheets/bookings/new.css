@@ -1,5 +1,6 @@
 .request-area {
   width: 100vw;
+  height: 1200px;
 }
 
 .request-area h1 {
@@ -50,10 +51,20 @@
 
 .request input[type="date"],
 .request input[type="text"],
-.request select,
 .request textarea,
-.request .form-right{
+.request .form-right,
+.grade-value {
   width: 50%;
+}
+
+.grade-value {
+  display: flex;
+  flex-direction: column;
+}
+
+.grade-value select {
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 .user-name {
