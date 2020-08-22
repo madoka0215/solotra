@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
   root to: 'toppages#index'
   
-  get 'login' => 'sessions#new'
-  post 'login' => 'sessions#create'
-  delete 'logout' => 'sessions#destroy'
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
   
   get 'signup', to: 'users#new'
   
@@ -14,15 +14,18 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :tours do
+  resources :tours, except: [:create] do
     collection do
       get :search
       get :osaka
       get :nagoya
       get :fukuoka
     end
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:new]
   end
+  
+  post '/tours/new', to: 'tours#create'
+  post '/tours/:tour_id/bookings/new', to: 'bookings#create'
   
   resources :bookings, only: [:index, :show, :edit, :update, :destroy]
   

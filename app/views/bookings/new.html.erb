@@ -10,7 +10,7 @@
     </div>
     
     <div class="request-form">
-      <%= form_with(model: @booking, url: tour_bookings_path(@tour), local: true) do |f| %>
+      <%= form_with(model: @booking, url: new_tour_booking_path(@tour), local: true) do |f| %>
         <%= render 'layouts/error_messages', model: f.object %>
         <%= f.hidden_field :tour_id %>
       
