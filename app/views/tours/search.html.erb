@@ -3,6 +3,7 @@
     <div class="search-results background">
       <p>検索結果</p>
         <%= render 'tours/tourlists', tours: @tours %>
+        <%= paginate @tours %>
     </div>
     
     <%= link_to '検索画面に戻る', root_path(anchor: 'search'), class: 'btn btn-light' %>
