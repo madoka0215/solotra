@@ -7,9 +7,9 @@ class User < ApplicationRecord
   has_secure_password
 
   has_many :tours
-  has_many :considerations
+  has_many :considerations, dependent: :destroy
   has_many :consideration_tours, through: :considerations, source: :tour
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   has_many :booking_tours, through: :bookings, source: :tour
   
   def consider(tour)
