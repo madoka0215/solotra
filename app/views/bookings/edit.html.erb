@@ -6,7 +6,7 @@
       <%= form_with(model: @booking, local: true) do |f| %>
         <%= render 'layouts/error_messages', model: f.object %>
         
-        <div class="form-group request">
+        <div class="form-group request request-edit">
           <div class="form-left">
             <%= f.label :status, "ステータス" %>
           </div>
