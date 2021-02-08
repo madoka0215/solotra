@@ -56,7 +56,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rails-i18n'
 gem 'pry-rails'
 gem 'byebug'
-gem 'carrierwave','~> 2.0'
+gem 'carrierwave','~> 2.1'
 gem 'mini_magick'
 gem 'kaminari'
 gem 'fog-aws'
